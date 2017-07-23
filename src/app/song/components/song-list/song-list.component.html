@@ -1,1 +1,8 @@
 <h2>Song List Page</h2>
+<ul class="song-list">
+  <li *ngFor="let song of songs | async" class="song-item" [class.selected]="isSelected(song)" (click)="onSelect(song)">
+    <span class="badge">{{ song.id }}</span> {{ song.name }}
+  </li>
+</ul>
+
+<button routerLink="/home">Go to Homepage</button>

@@ -1,1 +1,16 @@
-<h2>Song Detail Page</h2>
+<div *ngIf="song">
+  <h2>Song Detail: {{ dislayedTitle }}</h2>
+  <div>
+    <label>Id: </label>{{ song.id }}</div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="song.name" placeholder="name" />
+  </div>
+  <div>
+    <label>Singer: </label>
+    <input [(ngModel)]="song.singer" placeholder="singer" />
+  </div>
+  <p>
+    <button (click)="gotoSongs()">Back</button>
+  </p>
+</div>
