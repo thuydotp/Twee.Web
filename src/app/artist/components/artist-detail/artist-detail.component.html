@@ -1,1 +1,16 @@
-<h2>Artist Detail Page</h2>
+<div *ngIf="artist">
+  <h2>Artist Detail: {{ artist.name }}</h2>
+  <div>
+    <label>Id: </label>{{ artist.id }}</div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="artist.name" placeholder="name" />
+  </div>
+  <div>
+    <label>Description: </label>
+    <input [(ngModel)]="artist.description" placeholder="description" />
+  </div>
+  <p>
+     <button (click)="gotoArtists()">Back</button> 
+  </p>
+</div>

@@ -1,1 +1,8 @@
-<h2>Artist List Page</h2>
+<h3>Artist List Page</h3>
+<ul class="artist-list">
+  <li *ngFor="let artist of artists | async" class="artist-item" [class.selected]="isSelected(artist)" (click)="onSelect(artist)">
+    <span class="badge">{{ artist.id }}</span> {{ artist.name }}
+  </li>
+</ul>
+
+<button routerLink="/home">Go to Homepage</button>

@@ -19,16 +19,6 @@ const appRoutes: Routes = [
         data: { title: 'Twee: Homepage' }
     },
     {
-        path: 'artists',
-        component: ArtistListComponent,
-        data: { title: 'Twee: Artist List' }
-    },
-    {
-        path: 'artist/:id',
-        component: ArtistDetailComponent,
-        data: { title: 'Twee: Artist Detail' }
-    },
-    {
         path: 'error',
         component: ErrorPageComponent,
         data: { title: 'Twee: Page Not Found' }
