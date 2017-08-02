@@ -1,1 +1,7 @@
 <h2>Admin Page</h2>
+<nav>
+  <a routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+  <a routerLink="./manage-song" routerLinkActive="active">Manage Songs</a>
+  <a routerLink="./manage-artist" routerLinkActive="active">Manage Artists</a>
+</nav>
+<router-outlet></router-outlet>

@@ -16,11 +16,6 @@ const appRoutes: Routes = [
         outlet: 'popup'
     },
     {
-        path: 'admin',
-        component: AdminPageComponent,
-        data: { title: 'Twee: Administrator' }
-    },
-    {
         path: 'home',
         component: HomePageComponent,
         data: { title: 'Twee: Homepage' }
