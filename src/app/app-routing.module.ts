@@ -7,7 +7,14 @@ import { ErrorPageComponent } from "./error/error.component";
 import { ArtistListComponent } from "./artist/components/artist-list/artist-list.component";
 import { ArtistDetailComponent } from "./artist/components/artist-detail/artist-detail.component";
 
+import { ComposeMessageComponent } from "./compose-message/compose-message.component";
+
 const appRoutes: Routes = [
+    {
+        path: 'compose',
+        component: ComposeMessageComponent,
+        outlet: 'popup'
+    },
     {
         path: 'admin',
         component: AdminPageComponent,

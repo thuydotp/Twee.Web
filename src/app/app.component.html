@@ -7,6 +7,7 @@
         <a routerLink="/songs" routerLinkActive="active">Songs</a>
         <a routerLink="/error" routerLinkActive="active">Error</a>
         <a routerLink="/blahblahblah" routerLinkActive="active">Blah Blah Blah</a>
+        <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">Popup</a>
      </nav>
 </div> 
 <router-outlet></router-outlet>
