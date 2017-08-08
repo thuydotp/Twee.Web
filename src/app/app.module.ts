@@ -8,6 +8,7 @@ import { ArtistModule } from "./artist/artist.module";
 import { AdminModule } from "./admin/admin.module";
 
 import { AppRoutingModule } from "./app-routing.module";
+import { LoginRoutingModule } from "./login/login-routing.module";
 
 import { AppComponent } from './app.component';
 import { ComposeMessageComponent } from "./compose-message/compose-message.component";
@@ -15,7 +16,7 @@ import { HomePageComponent } from "./home/homepage.component";
 import { ErrorPageComponent } from "./error/error.component";
 import { SongListComponent } from "./song/components/song-list/song-list.component";
 import { SongDetailComponent } from "./song/components/song-detail/song-detail.component";
-
+import { LoginComponent } from "./login/login.component";
 
 @NgModule({
   imports: [
@@ -24,15 +25,16 @@ import { SongDetailComponent } from "./song/components/song-detail/song-detail.c
     SongModule,
     ArtistModule,
     AdminModule,
+    LoginRoutingModule,
     AppRoutingModule
   ],
   declarations: [
     AppComponent,
     ComposeMessageComponent,
     HomePageComponent,
+    LoginComponent,
     ErrorPageComponent
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
