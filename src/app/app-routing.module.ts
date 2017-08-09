@@ -8,6 +8,7 @@ import { ArtistListComponent } from "./artist/components/artist-list/artist-list
 import { ArtistDetailComponent } from "./artist/components/artist-detail/artist-detail.component";
 
 import { ComposeMessageComponent } from "./compose-message/compose-message.component";
+import { CanDeactivateGuard } from "./core/services/can-deactivate-guard.service";
 
 const appRoutes: Routes = [
     {
@@ -46,6 +47,9 @@ const appRoutes: Routes = [
     ],
     exports: [
         RouterModule
+    ],
+    providers: [
+        CanDeactivateGuard
     ]
 })
 

@@ -20,4 +20,5 @@ import { ManageSongComponent } from "./components/manage-song/manage-song.compon
         ManageSongComponent
     ]
 })
+
 export class AdminModule { }

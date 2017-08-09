@@ -1,16 +1,17 @@
-<div *ngIf="artist">
-  <h2>Artist Detail: {{ artist.name }}</h2>
+<div *ngIf="editableModel">
+  <h2>Artist Detail: {{ editableModel.name }}</h2>
   <div>
-    <label>Id: </label>{{ artist.id }}</div>
+    <label>Id: </label>{{ editableModel.id }}</div>
   <div>
     <label>Name: </label>
-    <input [(ngModel)]="artist.name" placeholder="name" />
+    <input [(ngModel)]="editableModel.name" placeholder="name" />
   </div>
   <div>
     <label>Description: </label>
-    <input [(ngModel)]="artist.description" placeholder="description" />
+    <input [(ngModel)]="editableModel.description" placeholder="description" />
   </div>
-  <p>
-     <button (click)="gotoArtists()">Back</button> 
-  </p>
+  <div>
+     <button (click)="gotoArtists()">Back</button>
+     <button (click)="save()">SAVE</button> 
+  </div>
 </div>

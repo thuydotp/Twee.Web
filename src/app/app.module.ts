@@ -17,6 +17,7 @@ import { ErrorPageComponent } from "./error/error.component";
 import { SongListComponent } from "./song/components/song-list/song-list.component";
 import { SongDetailComponent } from "./song/components/song-detail/song-detail.component";
 import { LoginComponent } from "./login/login.component";
+import { DialogService } from "./core/services/dialog.service";
 
 @NgModule({
   imports: [
@@ -34,6 +35,9 @@ import { LoginComponent } from "./login/login.component";
     HomePageComponent,
     LoginComponent,
     ErrorPageComponent
+  ],
+  providers: [
+    DialogService
   ],
   bootstrap: [AppComponent]
 })

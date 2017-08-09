@@ -4,6 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { ArtistComponent } from "./artist.component";
 import { ArtistListComponent } from "./components/artist-list/artist-list.component";
 import { ArtistDetailComponent } from "./components/artist-detail/artist-detail.component";
+import { CanDeactivateGuard } from "../core/services/can-deactivate-guard.service";
 
 const artistRoutes : Routes = [
     {
@@ -12,6 +13,7 @@ const artistRoutes : Routes = [
         children: [
             {
                 path: ':id',
+                canDeactivate: [CanDeactivateGuard],
                 component: ArtistDetailComponent
             },
             {

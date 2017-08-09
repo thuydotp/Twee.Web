@@ -14,9 +14,16 @@ const adminRoutes: Routes = [
         component: AdminPageComponent,
         canActivate: [AuthGuardService],
         children: [
-            { path: 'manage-artist', component: ManageArtistComponent },
-            { path: 'manage-song', component: ManageSongComponent },
-            { path: '', component: AdminDashboardComponent }
+            {
+                path: '',
+                canActivateChild: [AuthGuardService],
+                children: [
+                    { path: 'manage-artist', component: ManageArtistComponent },
+                    { path: 'manage-song', component: ManageSongComponent },
+                    { path: '', component: AdminDashboardComponent }
+                ]
+            }
+
         ],
         data: { title: 'Twee: Administrator' }
     }
