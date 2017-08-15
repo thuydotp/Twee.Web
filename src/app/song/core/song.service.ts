@@ -5,7 +5,8 @@ const SONGS: Song[] = [
     <Song>{ id: 2, name: 'Shape Of You', singer: 'Ed Sheeran' },
     <Song>{ id: 3, name: 'Daisy', singer: 'Zedd' },
     <Song>{ id: 4, name: 'Attention (Acoustic)', singer: 'Charlie Puth' },
-    <Song>{ id: 5, name: "That's What I Like", singer: 'Bruno Mars' }
+    <Song>{ id: 5, name: "That's What I Like", singer: 'Bruno Mars' },
+    <Song>{ id: 6, name: "Giọt Nắng Bên Thềm (Cover)", singer: 'Anh Khang', videoID: 'bcYW48-ad5Y' }
 ];
 export class SongService {
     private songsPromise = Promise.resolve(SONGS);
@@ -19,6 +20,8 @@ export class SongService {
             // (+) before `id` turns the string into a number
             .then(songs => songs.find(item => item.id === +id));
     };
+
+
 }
 
 export class Song {
@@ -26,4 +29,6 @@ export class Song {
     name: string;
     singer: string;
     imageUrl?: string;
+    videoID?: string;
+    isAutoPlay?: boolean;
 }

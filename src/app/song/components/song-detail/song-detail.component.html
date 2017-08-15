@@ -10,6 +10,19 @@
     <label>Singer: </label>
     <input [(ngModel)]="song.singer" placeholder="singer" />
   </div>
+  <div>
+    <label>Youtube video ID: </label>
+    <input [(ngModel)]="song.videoID" placeholder="Youtube video ID" />
+  </div>
+  <div>
+    <label>Youtube video ID: </label>
+    <input type="checkbox" [(ngModel)]="song.isAutoPlay"/>Auto Play
+  </div>
+  <div *ngIf="displayedVideoUrl">
+    <p>{{displayedVideoUrl}}</p>
+    <iframe *ngIf="displayedSafeVideoUrl" width="560" height="315" [src]="displayedSafeVideoUrl" frameborder="0" allowfullscreen>
+    </iframe>
+  </div>
   <p>
     <button (click)="gotoSongs()">Back</button>
   </p>
