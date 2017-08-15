@@ -5,6 +5,7 @@ import { ArtistComponent } from "./artist.component";
 import { ArtistListComponent } from "./components/artist-list/artist-list.component";
 import { ArtistDetailComponent } from "./components/artist-detail/artist-detail.component";
 import { CanDeactivateGuard } from "../core/services/can-deactivate-guard.service";
+import { ArtistResolverService } from "./core/artist-resolver.service";
 
 const artistRoutes : Routes = [
     {
@@ -14,7 +15,10 @@ const artistRoutes : Routes = [
             {
                 path: ':id',
                 canDeactivate: [CanDeactivateGuard],
-                component: ArtistDetailComponent
+                component: ArtistDetailComponent,
+                resolve: {
+                    artist: ArtistResolverService
+                }
             },
             {
                 path: '',
@@ -28,7 +32,8 @@ const artistRoutes : Routes = [
     imports: [
         RouterModule.forChild(artistRoutes)
     ],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [ArtistResolverService]
 })
 
-export class ArtistRoutingModule {}
+export class ArtistRoutingModule {} 

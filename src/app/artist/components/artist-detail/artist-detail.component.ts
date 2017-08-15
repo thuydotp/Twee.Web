@@ -28,14 +28,20 @@ export class ArtistDetailComponent implements OnInit {
 
     ngOnInit() {
         //c1
-        this.route.paramMap
-            .switchMap((params: ParamMap) =>
-                // (+) before `id` turns the string into a number
-                this.artistService.getItemById(+params.get('id'))
-            )
-            .subscribe((artist: Artist) => {
-                this.artist = artist || <Artist>{};
-                this.editableModel = JSON.parse(JSON.stringify(artist));
+        // this.route.paramMap
+        //     .switchMap((params: ParamMap) =>
+        //         // (+) before `id` turns the string into a number
+        //         this.artistService.getItemById(+params.get('id'))
+        //     )
+        //     .subscribe((artist: Artist) => {
+        //         this.artist = artist || <Artist>{};
+        //         this.editableModel = JSON.parse(JSON.stringify(artist));
+        //     });
+
+        this.route.data
+            .subscribe((data: { artist: Artist }) => {
+                this.artist = data.artist || <Artist>{};
+                this.editableModel = JSON.parse(JSON.stringify(this.artist ));
             });
 
         // c2: the no-observable alternative
@@ -76,7 +82,7 @@ export class ArtistDetailComponent implements OnInit {
         // Allow synchronous navigation (`true`) if no artist or the artist data is unchanged
         if (!this.artist) return true;
         if (this.artist.name === this.editableModel.name && this.artist.description === this.editableModel.description) return true;
-        
+
         // Otherwise ask the user with the dialog service and return its
         // promise which resolves to true or false when the user decides
         return this.dialogService.confirm('Discard changes?');
